@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoctorViews</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>Patient ID</td>
+          <td>Profile Picture</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Gender</td>
+          <td>Email</td>
+          <td>Phone</td>
+          <td>street</td>
+          <td>city</td>
+          <td>state</td>
+          <td>zipcode</td>
+          <td>apt</td>
+          <td>Date of Birth</td>
+          <td>Role</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients">
+          <td>{{ patient.patient.userId }}</td>
+          <td>{{ patient.patient.profilepicture }}</td>
+          <td>{{ patient.patient.firstName }}</td>
+          <td>{{ patient.patient.lastName }}</td>
+          <td>{{ patient.patient.gender }}</td>
+          <td>{{ patient.patient.email }}</td>
+          <td>{{ patient.patient.phone }}</td>
+          <td>{{ patient.patient.address.street }}</td>
+          <td>{{ patient.patient.address.city }}</td>
+          <td>{{ patient.patient.address.state }}</td>
+          <td>{{ patient.patient.address.zipcode }}</td>
+          <td>{{ patient.patient.address.apt }}</td>
+          <td>{{ patient.patient.dob }}</td>
+          <td>{{ patient.patient.role }}</td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+  </body>
+</html>

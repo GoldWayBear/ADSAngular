@@ -1,0 +1,38 @@
+.content {
+  background-color: rgb(179, 248, 185);
+  border-style: solid;
+  border-radius: 1px;
+  padding: 2em;
+  display: inline-block;
+  margin: auto;
+  margin-top: 3em;
+  width: auto;
+  text-align: center;
+}
+
+input {
+  border-radius: 1em;
+  text-align: center;
+  padding: 1em;
+  margin: 1em;
+  display: block;
+}
+.btn {
+  background-color: rgb(53, 219, 53);
+  border-radius: 1em;
+
+  padding: 1em;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 3px 3px black;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: greenyellow;
+}
+.btn:active {
+  background-color: greenyellow;
+  box-shadow: 0 2px black;
+  transform: translateY(4px);
+}

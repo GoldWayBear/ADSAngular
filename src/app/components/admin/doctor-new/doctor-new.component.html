@@ -1,0 +1,21 @@
+<div class = "doctor-card">
+    <h2>Register new Doctor</h2>
+    <form>
+        <input [(ngModel)]="newDoctor.username" type="text" placeholder="username" name="username"/>
+        <input [(ngModel)]="newDoctor.password" type="text" placeholder="password" name="password"/>
+        <input [(ngModel)]="newDoctor.profilepicture" type="text" placeholder="profilepicture" name="profilepicture"/>
+        <input [(ngModel)]="newDoctor.firstName" type="text" placeholder="first name" name="firstName"/>
+        <input [(ngModel)]="newDoctor.lastName" type="text" placeholder="last name" name="lastName"/>
+        <input [(ngModel)]="newDoctor.gender" type="text" placeholder="gender" name="gender"/>
+        <input [(ngModel)]="newDoctor.email" type="text" placeholder="e-mail" name="email"/>
+        <input [(ngModel)]="newDoctor.phone" type="number" placeholder="phone number" name="phone"/>
+        <input [(ngModel)]="newDoctor.address.street" type="text" placeholder="street" name="street"/>
+        <input [(ngModel)]="newDoctor.address.city" type="text" placeholder="city" name="city"/>
+        <input [(ngModel)]="newDoctor.address.state" type="text" placeholder="state" name="state"/>
+        <input [(ngModel)]="newDoctor.address.apt" type="text" placeholder="apt" name="apt"/>
+        <label for="dob"> DOB</label>
+        <input [(ngModel)]="newDoctor.dob" type="date" placeholder="dob" name="dob"/>
+        <button (click)="createDoctor()">Register</button>
+    </form>
+</div>
+

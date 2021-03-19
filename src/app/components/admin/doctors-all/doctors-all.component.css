@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  text-align: center;
+}
+
+.doctor-card {
+  border-style: solid;
+  padding: 5px;
+  margin: 5px;
+}
