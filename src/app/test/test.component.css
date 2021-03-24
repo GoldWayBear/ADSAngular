@@ -1,0 +1,15 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  h1{
+	text-align:center;
+}
+
+div{
+    display: block;
+	margin: auto auto auto auto;
+	text-align: center;
+}

@@ -1,0 +1,23 @@
+<!--Navbar-->
+<app-patient-navbar></app-patient-navbar>
+<!--Header-->
+<app-patient-header></app-patient-header>
+<!--Content-->
+<h1>All Doctors</h1>
+<div class="wrapper">
+<div *ngFor="let d of doctors" >
+    <div class = "doctor-card">
+        <p>First Name: {{d.firstName}}</p>
+        <p>Last Name: {{d.lastName}}</p>
+        <p>Gender: {{d.gender}}</p>
+        <p>Phone number: {{d.phone}}</p>
+        <p>Address: {{d.address.street}},
+                    {{d.address.city}},
+                    {{d.address.state}},
+                    {{d.address.zipcode}},
+                    {{d.address.apt}}
+        </p>
+        <button class="btn">Choose as my doctor</button>
+    </div>
+</div>
+</div>

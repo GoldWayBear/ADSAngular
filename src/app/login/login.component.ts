@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
+      console.log('current role :'+ this.roles);
       for(var role of this.roles){
         if(role == 'ROLE_DOCTOR'){
           this.route.navigate(['/doctor']); // navigate to other page
@@ -51,15 +52,20 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(username, password).subscribe(
       data => {
-      
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data);
 
-        console.log('accessToken:'+ data.accessToken);
+        console.log('accessToken:'+ data.token);
+        console.log('current username in Data:'+ data.username);
+        console.log('current username in storage:'+ this.tokenStorage.getUser());
+
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
+        
         for(var role of this.roles){
+          //console.log('current role :'+ role);
+          
           if(role == 'ROLE_DOCTOR'){
             this.route.navigate(['/doctor']); // navigate to other page
           }else if(role == 'ROLE_ADMIN'){
@@ -67,6 +73,7 @@ export class LoginComponent implements OnInit {
           }else{
             this.route.navigate(['/patient']); // navigate to other page
           }
+          
           break;
         }
 

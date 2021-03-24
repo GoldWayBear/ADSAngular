@@ -1,6 +1,6 @@
 import { User } from "./user";
 
-export class Patient{
+export class PatientDoctor{
     doctor:User;
     patient:User;
 

@@ -1,1 +1,27 @@
-<p>schedule-all works!</p>
+<!--Navbar-->
+<app-admin-navbar></app-admin-navbar>
+<!--Header-->
+<app-admin-header></app-admin-header>
+<!--Content-->
+<h1>Appointment Schadule</h1>
+<div class="wrapper">
+   <!--add card for each appointment--> 
+<div *ngFor="let a of appointments" >
+    <div class = "doctor-card">
+        <p>Doctor: {{a.doctor.firstName}} {{a.doctor.lastName}}</p>
+        <p>Date: {{a.time | date:'mediumDate'}}</p>
+        <p>Time: {{a.time | date:'shortTime'}}</p>
+        <!--If booked-->
+        <!--show  by whome -->
+        <div style="color: red">
+        <div  style="color:rgb(50, 121, 50)" *ngIf="a.status=='booked';else status"> 
+            <p > {{a.status}} by:</p>
+            <p>{{a.patient.firstName}} {{a.patient.lastName}} </p>
+        <!--Else show status(avalible) -->   
+        </div>
+        <ng-template #status >{{a.status}}</ng-template>
+    </div>
+   
+    </div>
+</div>
+</div>

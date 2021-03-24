@@ -1,0 +1,19 @@
+.bg-img {
+  /* The image used */
+  background-image: url("../../../../assets/image/WadiRum3.jpg");
+  min-height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  left: 15%;
+  max-width: 70%;
+  padding: 4px;
+  background-color: white;
+  height: 100%;
+}

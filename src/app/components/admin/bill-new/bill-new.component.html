@@ -1,1 +1,19 @@
-<p>bill-new works!</p>
+<!--Navbar-->
+<app-admin-navbar></app-admin-navbar>
+<!--Header-->
+<app-admin-header></app-admin-header>
+<!--Content-->
+<div class = "containerReq">
+    <h2>Send Bill</h2>
+    <form [hidden] = "hideForm">
+        <label for="user.userId">Patient ID</label>
+        <input [(ngModel)]="newBill.user.userId" type="number" placeholder="patient ID" name="user.userId"/>
+        <label for="total"> Billing amount in $</label>
+        <input [(ngModel)]="newBill.total" type="number" placeholder="total" name="total"/>
+        <div class="divForBtn">
+        <button class="btn" (click)="createBill()">Send</button>
+        </div>
+    </form>
+    <p style="color: rgb(56, 209, 56);" [hidden] = "hideMessage">Bill send succsessfully</p>
+    <p style="color:red" [hidden] = "hideError">Could not send bill</p>
+</div>

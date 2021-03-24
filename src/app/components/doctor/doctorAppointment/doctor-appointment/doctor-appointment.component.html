@@ -1,0 +1,33 @@
+<!--Navbar-->
+<app-doctor-navbar></app-doctor-navbar>
+<!--Header-->
+<app-doctor-header></app-doctor-header>
+<!--Content-->
+    <table>
+      <thead>
+        <tr>
+          <td>Appointment ID</td>
+          <td>Appointment Time</td>
+          <td>Profile Picture</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Gender</td>
+          <td>Doctor Name</td>
+          <td>Status</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.appointmentId }}</td>
+          <td>{{ appointment.time }}</td>
+          <td>{{ appointment.patient.profilepicture }}</td>
+          <td>{{ appointment.patient.firstName }}</td>
+          <td>{{ appointment.patient.lastName }}</td>
+          <td>{{ appointment.patient.gender }}</td>
+          <td>{{ appointment.doctor.firstName }}</td>
+          <td>{{ appointment.status }}</td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+

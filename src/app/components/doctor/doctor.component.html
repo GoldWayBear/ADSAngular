@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DoctorViews</title>
-  </head>
-  <body>
+<!--Navbar-->
+<app-doctor-navbar></app-doctor-navbar>
+<!--Header-->
+<app-doctor-header></app-doctor-header>
+<!--Content-->
     <table>
       <thead>
         <tr>
@@ -29,7 +25,15 @@
       <tbody>
         <tr *ngFor="let patient of patients">
           <td>{{ patient.patient.userId }}</td>
-          <td>{{ patient.patient.profilepicture }}</td>
+          <td>
+            <img
+              [src]="formatImage(patient.patient.profilepicture)"
+              id="image"
+              alt="RGB Image"
+              height="100"
+              width="120"
+            />
+          </td>
           <td>{{ patient.patient.firstName }}</td>
           <td>{{ patient.patient.lastName }}</td>
           <td>{{ patient.patient.gender }}</td>
@@ -46,5 +50,4 @@
       </tbody>
       <tfoot></tfoot>
     </table>
-  </body>
-</html>
+

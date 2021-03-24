@@ -1,6 +1,12 @@
-<div class = "doctor-card">
+
+<!--Navbar-->
+<app-admin-navbar></app-admin-navbar>
+<!--Header-->
+<app-admin-header></app-admin-header>
+<!--Content-->
+<div class = "containerReq">
     <h2>Register new Doctor</h2>
-    <form>
+    <form [hidden] = "hideForm">
         <input [(ngModel)]="newDoctor.username" type="text" placeholder="username" name="username"/>
         <input [(ngModel)]="newDoctor.password" type="text" placeholder="password" name="password"/>
         <input [(ngModel)]="newDoctor.profilepicture" type="text" placeholder="profilepicture" name="profilepicture"/>
@@ -8,14 +14,20 @@
         <input [(ngModel)]="newDoctor.lastName" type="text" placeholder="last name" name="lastName"/>
         <input [(ngModel)]="newDoctor.gender" type="text" placeholder="gender" name="gender"/>
         <input [(ngModel)]="newDoctor.email" type="text" placeholder="e-mail" name="email"/>
+        <label for="phone"> Phone number</label>
         <input [(ngModel)]="newDoctor.phone" type="number" placeholder="phone number" name="phone"/>
-        <input [(ngModel)]="newDoctor.address.street" type="text" placeholder="street" name="street"/>
+        <input [(ngModel)]="newDoctor.address.street" type="text" placeholder="address" name="street"/>
         <input [(ngModel)]="newDoctor.address.city" type="text" placeholder="city" name="city"/>
         <input [(ngModel)]="newDoctor.address.state" type="text" placeholder="state" name="state"/>
-        <input [(ngModel)]="newDoctor.address.apt" type="text" placeholder="apt" name="apt"/>
+        <input [(ngModel)]="newDoctor.address.apt" type="text" placeholder="apt, unit, suit" name="apt"/>
         <label for="dob"> DOB</label>
         <input [(ngModel)]="newDoctor.dob" type="date" placeholder="dob" name="dob"/>
-        <button (click)="createDoctor()">Register</button>
+       <div class="divForBtn">
+        <button class="btn"(click)="createDoctor()">Register</button>
+    </div>
     </form>
+    <p style="color: rgb(56, 209, 56);" [hidden] = "hideMessage">Doctor registred succsessfully</p>
+    <p style="color:red" [hidden] = "hideError">Could not register a doctor</p>
 </div>
+
 

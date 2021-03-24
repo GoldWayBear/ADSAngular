@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Appointment } from 'src/app/models/appointment';
-import { Patient } from 'src/app/models/patient';
+import { PatientDoctor } from 'src/app/models/patientdoctor';
 import { User } from 'src/app/models/user';
 import { UserDoctorServiceService } from 'src/app/service/user-doctor-service.service';
 
@@ -15,11 +15,15 @@ export class DoctorComponent implements OnInit {
   constructor(private userDoctorServiceService:UserDoctorServiceService,
     private router:Router) { }
 
-  patients:Patient[] = [];
-    appointments:Appointment[] = [];
+  patients:PatientDoctor[] = [];
+    
 
   ngOnInit(): void {
     this.viewSelfPatients();
+  }
+
+  formatImage(img:any): any {
+    return 'data:image/jpeg;base64,' + img;
   }
 
   //retrieves the doctor's own patients
@@ -34,16 +38,6 @@ export class DoctorComponent implements OnInit {
       }
     )
   }
-//retrieves the doctor's appointments that are booked and active
-  viewBookedAppointments(){
-    this.userDoctorServiceService.viewBookedAppointments().subscribe(
-      (data) => {
-        this.appointments = data;
-      },
-      () => {
-        console.log("Oops, something went wrong.");
-      }
-    )
-  }
+
 
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>View All Flights</title>
+  </head>
+  <body>
+    <h3>All Users</h3>
+    <div id="container">
+      
+      <div *ngFor="let u of users">
+        <img [src] = "formatImage(u.profilepicture)" id="image" alt="RGB Image" height="100" width="120"> 
+        <label><b>Username:</b></label>
+        <P>{{u.username}}</P>     
+        <label><b>Email:</b></label>
+        <P>{{u.email}}</P>     
+        <label><b>Role:</b></label>
+        <P>{{u.role}}</P>     
+      </div>
+    </div>
+
+  </body>
+</html>

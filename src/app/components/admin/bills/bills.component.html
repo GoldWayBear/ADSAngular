@@ -1,1 +1,19 @@
-<p>bills works!</p>
+<!--Navbar-->
+<app-admin-navbar></app-admin-navbar>
+<!--Header-->
+<app-admin-header></app-admin-header>
+<!--Content-->
+<h1>All Bills</h1>
+<div class="wrapper">
+<div *ngFor="let b of bills" >
+    <div class = "card">
+        <p>Invoice number: {{b.invoiceId}}</p>
+        <p>Recipient: {{b.user.firstName}} {{b.user.lastName}}</p>
+        <p>Amount: {{b.total}}</p>
+        <p>Date of invoice: {{b.date}}</p>
+        <p>Due date: {{b.dueDate}}</p>
+    </div>
+</div>
+</div>
+
+<br><br>

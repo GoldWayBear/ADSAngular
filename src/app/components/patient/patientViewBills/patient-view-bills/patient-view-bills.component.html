@@ -1,0 +1,30 @@
+<!--Navbar-->
+<app-patient-navbar></app-patient-navbar>
+<!--Header-->
+<app-patient-header></app-patient-header>
+<!--Content-->
+    <!--This is a simple table to display the data-->
+    <table>
+      <thead>
+        <tr>
+          <td>Invoice ID</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Total</td>
+          <td>Date</td>
+          <td>Due Date</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of bills">
+          <td>{{ b.invoiceId }}</td>
+          <td>{{ b.user.firstName }}</td>
+          <td>{{ b.user.lastName }}</td>
+          <td>{{ b.total }}</td>
+          <td>{{ b.date }}</td>
+          <td>{{ b.dueDate }}</td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+

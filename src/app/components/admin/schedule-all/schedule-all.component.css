@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+}
+
+.doctor-card {
+  text-align: center;
+  border-style: solid;
+  width: 300px;
+  height: 180px;
+  padding: 5px;
+  margin: 5px;
+  background-color: rgb(234, 235, 233);
+  box-shadow: 3px 3px black;
+}
+
+.wrapper {
+  margin-top: 3em;
+  margin-left: 3em;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5em;
+}

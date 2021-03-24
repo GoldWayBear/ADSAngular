@@ -1,1 +1,19 @@
-<p>schedule-new works!</p>
+<!--Navbar-->
+<app-admin-navbar></app-admin-navbar>
+<!--Header-->
+<app-admin-header></app-admin-header>
+<!--Content-->
+<div class = "containerReq">
+    <h2>Add Avaliability to Schadule</h2>
+    <form [hidden] = "hideForm">
+        <label for="time"> Day & Time </label>
+        <input [(ngModel)]="spot.time" type="datetime-local" name="time"/>
+        <label for="doctor"> Doctor ID </label>
+        <input [(ngModel)]="spot.doctor.userId" type="number"  name="doctor"/>
+        <div class="divForBtn">
+            <button class="btn"(click)="createSpot()">Add Avaliability</button>
+        </div>
+    </form>
+    <p style="color: rgb(56, 209, 56)" [hidden] = "hideMessage">Spot added succsessfully</p>
+    <p style="color:red" [hidden] = "hideError">Could add time slot</p>
+</div>

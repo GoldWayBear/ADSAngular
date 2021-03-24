@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DasUserService} from '../auth_service/das-user.service';
-import {TokenStorageService} from '../auth_service/token-storage.service';
-import {Router} from '@angular/router';
+// import {TokenStorageService} from '../auth_service/token-storage.service';
+// import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-admin',
@@ -11,9 +11,11 @@ import {Router} from '@angular/router';
 
 export class UserAdminComponent implements OnInit {
   content?:string;
-  constructor(private userService: DasUserService,
-    private tokenStorageService: TokenStorageService,
-    private router:Router) { }
+  constructor(private userService: DasUserService
+    // ,
+    // private tokenStorageService: TokenStorageService,
+    // private router:Router
+    ) { }
 
   ngOnInit(): void {
     this.userService.getUserAdmin().subscribe(
@@ -26,9 +28,9 @@ export class UserAdminComponent implements OnInit {
     )
   }
   
-  logout(): void {
-    this.tokenStorageService.logOut();
-    window.location.reload();
-    this.router.navigate(['/login']); // navigate to login page
-  }
+  // logout(): void {
+  //   this.tokenStorageService.logOut();
+  //   window.location.reload();
+  //   this.router.navigate(['/login']); // navigate to login page
+  // }
 }
